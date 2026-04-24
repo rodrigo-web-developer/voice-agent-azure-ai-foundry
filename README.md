@@ -62,18 +62,7 @@ Usuário fala / digita
 - Azure CLI instalado e autenticado (`az login`)
 - Endpoint Azure VoiceLive válido e agente Foundry
 
-### 2) Instalação (Windows PowerShell)
-
-```powershell
-./install.ps1
-```
-
-Este comando irá:
-
-- instalar todas as dependências com `uv sync`
-- criar `.env` a partir de `.env.example`, se necessário
-
-### 3) Configurar credenciais
+### 2) Configurar credenciais
 
 Atualize o `.env` com suas credenciais:
 
@@ -90,6 +79,8 @@ AZURE_VOICELIVE_VOICE_EN="en-US-Ava:DragonHDLatestNeural"
 AZURE_VOICELIVE_VOICE_PT="pt-BR-FranciscaNeural"
 ```
 
+Você pode copiar essa informação diretamente do Foundry Portal.
+
 Se o seu agente for versionado, defina `AZURE_VOICELIVE_AGENT_ID` como `name:version` ou configure `AZURE_VOICELIVE_AGENT_VERSION` separadamente.
 
 Defina `AZURE_VOICELIVE_ENABLE_INTERIM_RESPONSES` como `false` para evitar que o agente fale respostas parciais e finais (o que pode soar como respostas duplicadas).
@@ -98,13 +89,13 @@ Defina `AZURE_VOICELIVE_AUTO_LANGUAGE_VOICE` como `true` para alternar automatic
 
 Defina `AZURE_VOICELIVE_MUTE_MIC_WHILE_SPEAKING` como `true` para impedir que o agente ouça a própria voz enquanto responde.
 
-### 4) Executar
+### 3) Executar
 
 ```powershell
 uv run english-agent
 ```
 
-### 5) Flags opcionais de execução
+### 4) Flags opcionais de execução
 
 ```powershell
 uv run english-agent --verbose
